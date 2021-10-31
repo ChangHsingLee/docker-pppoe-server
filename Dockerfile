@@ -9,9 +9,9 @@ RUN ln -sf /bin/bash /bin/sh
 RUN apt-get update && apt-get install --no-install-recommends  -y \
 pppoe iputils-ping vim-tiny iptables net-tools && \
 	\
-# backup/export configuration files & log files
+# export configuration files & log files
 mkdir -p /srv/log && mv /etc/ppp /srv/pppoe-config && rm -fr /var/log && \
-ln -sf /srv/log /var/log && ln -sf /srv/pppoe-config /etc/ppp && cp -a srv srv.bak
+ln -sf /srv/log /var/log && ln -sf /srv/pppoe-config /etc/ppp
 
 # copy startup script
 COPY startService.sh /etc/
