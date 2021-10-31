@@ -1,0 +1,8 @@
+ms-dns 168.95.1.1
+ms-dns 8.8.8.8
+auth
+proxyarp
+lcp-echo-interval 30
+lcp-echo-failure 4
+debug 1
+logfile /var/log/pppd.log
