@@ -5,6 +5,18 @@
 INTERNET_IFACE=eth0
 PPPOE_IFACE=eth1
 
+mkdir -p /srv/log
+
+if [ "$MANUALLY_START" == "yes" ]; then
+	echo "Skip to start PPPoE server!"
+	exit 0
+fi
+
+if [ ! -d /srv/pppoe-config ] || [ "$DEFAULT_CFG" == "yes" ]; then
+	echo "Use default configuration!"
+	cp -a /srv.bak/* /srv/
+fi
+
 # check network interfaces eth0 && eth1
 for i in $INTERNET_IFACE $PPPOE_IFACE; do
 	if ! ifconfig $i >&- 2>/dev/null; then
