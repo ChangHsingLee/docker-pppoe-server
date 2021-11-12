@@ -7,7 +7,7 @@ Initial Date:
 
 Version:
 
-	Ubuntu Linux: 20.04.3 LTS 
+	Ubuntu Linux: 20.04.3 LTS (Focal Fossa)
 	rp-pppoe: 3.12
 	pppd: 2.4.7
 
