@@ -146,3 +146,12 @@ docker start $CONTAINER_NAME
     pppoe-user2/pppoe2341<br>
     pppoe-user3/pppoe3412<br>
     pppoe-user4/pppoe4123<br>
+
+### Backup docker image
+    DOCKER_IMG_NAME="changhsinglee/pppoe-server:latest"; \
+    BACKUP_DOCKER_IMAGE=pppoe-server-dockerImg.tar.bz2; \
+    docker save $DOCKER_IMG_NAME | bzip2 -9vz > $BACKUP_DOCKER_IMAGE
+
+### Restore docker image
+    BACKUP_DOCKER_IMAGE=pppoe-server-dockerImg.tar.bz2; \
+    bzip2 -dcv $BACKUP_DOCKER_IMAGE | docker load
